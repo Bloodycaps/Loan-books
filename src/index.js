@@ -19,7 +19,8 @@ app.use(express.json());
 //Global Variables
 
 //Routes
-app.use(require("./routes"));
+app.use(require("./routes/index.routes"));
+app.use(("/estudiantes"),require("./routes/student.routes"));
 
 //Public
 
