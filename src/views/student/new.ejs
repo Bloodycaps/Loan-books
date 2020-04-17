@@ -5,17 +5,16 @@
       <div class="card">
         <div class="card-head">
           <div class="text-center">
-            <h1>Editar</h1>
+            <h1>Nuevo Estudiante</h1>
           </div>
         </div>
         <div class="card-body">
-          <form action="/estudiantes/edit/<%= estudiante.IdLector %>" method="POST">
+          <form action="/estudiantes/new" method="POST">
             <div class="form-group">
               <label>CI</label>
               <input
                 type="text"
                 name="ci"
-                value="<%= estudiante.CI %> "
                 class="form-control"
               />
             </div>
@@ -24,7 +23,6 @@
               <input
                 type="text"
                 name="nombre"
-                value="<%= estudiante.Nombre %> "
                 class="form-control"
               />
             </div>
@@ -33,7 +31,6 @@
               <input
                 type="text"
                 name="direccion"
-                value="<%= estudiante.Direccion %> "
                 class="form-control"
               />
             </div>
@@ -42,7 +39,6 @@
               <input
                 type="text"
                 name="carrera"
-                value="<%= estudiante.Carrera %> "
                 class="form-control"
               />
             </div>
@@ -51,7 +47,6 @@
               <input
                 type="text"
                 name="edad"
-                value="<%= estudiante.Edad %> "
                 class="form-control"
               />
             </div>
