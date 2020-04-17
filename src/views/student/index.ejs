@@ -1,15 +1,56 @@
-<%- include('../partials/header'); -%> <%- include('../partials/nav'); -%>
+<%- include('../partials/header'); -%> 
+<%- include('../partials/nav'); -%>
 
-<div class="ml-5 ml-auto">
+<div class="ml-5 mr-5">
   <section>
     <div class="d-flex bd-highlight mb-3">
       <div class="m-2 ml-auto">
         <a href="/estudiantes/new" class="btn btn-success"
-          ><i class="fas fa-plus-circle"></i>Nuevo Estudiante</a
+          ><i class="fas fa-user-plus"></i> Nuevo Estudiante</a
         >
       </div>
     </div>
   </section>
+  <table class="table table-sm text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">CI</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Carrera</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+
+    <% for( let i = 0; i < estudiantes.length; i++ ) { %>
+    <tbody>
+      <tr>
+        <th scope="row"><%= estudiantes[i].CI %></th>
+        <td><%= estudiantes[i].Nombre %></td>
+        <td><%= estudiantes[i].Direccion %></td>
+        <td><%= estudiantes[i].Carrera %></td>
+        <td><%= estudiantes[i].Edad %></td>
+        <td>
+          <a
+            class="btn btn-primary"
+            href="/estudiantes/edit/<%= estudiantes[i].IdLector %>"
+          >
+            <i class="fas fa-pen"></i>
+            Editar
+          </a>
+          <a
+            class="btn btn-danger"
+            href="/estudiantes/delete/<%= estudiantes[i].IdLector %>"
+          >
+            <i class="fas fa-trash-alt"></i>
+            Eliminar
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <% } %>
+  </table>
 </div>
 
 <%- include('../partials/footer'); -%>
