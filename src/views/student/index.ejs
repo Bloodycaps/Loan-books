@@ -26,22 +26,22 @@
     <% for( let i = 0; i < estudiantes.length; i++ ) { %>
     <tbody>
       <tr>
-        <th scope="row"><%= estudiantes[i].CI %></th>
-        <td><%= estudiantes[i].Nombre %></td>
-        <td><%= estudiantes[i].Direccion %></td>
-        <td><%= estudiantes[i].Carrera %></td>
-        <td><%= estudiantes[i].Edad %></td>
+        <th scope="row"><%= estudiantes[i].ci %></th>
+        <td><%= estudiantes[i].nombre %></td>
+        <td><%= estudiantes[i].direccion %></td>
+        <td><%= estudiantes[i].carrera %></td>
+        <td><%= estudiantes[i].edad %></td>
         <td>
           <a
             class="btn btn-primary"
-            href="/estudiantes/edit/<%= estudiantes[i].IdLector %>"
+            href="/estudiantes/edit/<%= estudiantes[i].idlector %>"
           >
             <i class="fas fa-pen"></i>
             Editar
           </a>
           <a
             class="btn btn-danger"
-            href="/estudiantes/delete/<%= estudiantes[i].IdLector %>"
+            href="/estudiantes/delete/<%= estudiantes[i].idlector %>"
           >
             <i class="fas fa-trash-alt"></i>
             Eliminar
