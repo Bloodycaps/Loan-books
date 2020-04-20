@@ -15,7 +15,10 @@ router.post("/new", async (req, res) => {
     Carrera: carrera,
     Edad: edad,
   };
-  await db.query("INSERT INTO estudiante SET ?", [newEstudiante]);
+  await db.query(
+    "INSERT INTO estudiante (ci, nombre, direccion, carrera, edad) VALUES ($1, $2, $3, $4, $5) ",
+    [ci, nombre, direccion, carrera, edad]
+  );
   res.redirect("/estudiantes");
 });
 
@@ -25,24 +28,16 @@ router.get("/edit/:id", async (req, res) => {
     "SELECT * FROM estudiante WHERE idlector = $1",
     [id]
   );
-  console.log(estudiante.rows);
   res.render("student/edit", { estudiante: estudiante.rows[0] });
 });
 
 router.post("/edit/:id", async (req, res) => {
   const { id } = req.params;
   const { ci, nombre, direccion, carrera, edad } = req.body;
-  const newEstudiante = {
-    ci,
-    nombre,
-    direccion,
-    carrera,
-    edad,
-  };
-  await db.query("UPDATE estudiante SET $1 WHERE idlector = $2", [
-    newEstudiante,
-    id,
-  ]);
+  await db.query(
+    "UPDATE estudiante SET ci = $1, nombre = $2, direccion = $3, carrera = $4, edad = $5 WHERE idlector = $6",
+    [ci, nombre, direccion, carrera, edad, id]
+  );
   res.redirect("/estudiantes");
 });
 
