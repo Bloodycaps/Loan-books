@@ -21,6 +21,7 @@ app.use(express.json());
 //Routes
 app.use(require("./routes/index.routes"));
 app.use(("/estudiantes"),require("./routes/student.routes"));
+app.use(("/autores"),require("./routes/author.routes"));
 
 //Public
 
