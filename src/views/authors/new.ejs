@@ -1,0 +1,40 @@
+<%- include("../partials/header"); -%>
+<div class="container p-4">
+  <div class="rows">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-head">
+          <div class="text-center">
+            <h1>Nuevo Autor</h1>
+          </div>
+        </div>
+        <div class="card-body">
+          <form action="/autores/new" method="POST">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label>Nacionalidad</label>
+              <input
+                type="text"
+                name="nacionalidad"
+                class="form-control"
+              />
+            </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-success">Guardar</button>
+              <a href="/autores" class="btn btn-danger">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("../partials/footer"); -%>
