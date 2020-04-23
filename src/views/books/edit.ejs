@@ -1,0 +1,35 @@
+<%- include("../partials/header"); -%>
+<div class="container p-4">
+  <div class="rows">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-head">
+          <div class="text-center">
+            <h1>Nuevo Libro</h1>
+          </div>
+        </div>
+        <div class="card-body">
+          <form action="/libros/edit/<%= libro.idlibro %> " method="POST">
+            <div class="form-group">
+              <label>Titulo</label>
+              <input type="text" name="titulo" class="form-control" value="<%= libro.titulo %>" />
+            </div>
+            <div class="form-group">
+              <label>Editorial</label>
+              <input type="text" name="editorial" class="form-control" value="<%= libro.editorial %>" />
+            </div>
+            <div class="form-group">
+              <label>Area</label>
+              <input type="text" name="area" class="form-control" value="<%= libro.area %>"/>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-success">Guardar</button>
+              <a href="/libros" class="btn btn-danger">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("../partials/footer"); -%>

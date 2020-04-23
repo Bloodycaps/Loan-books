@@ -1,0 +1,52 @@
+<%- include('../partials/header'); -%> 
+<%- include('../partials/nav'); -%>
+
+<div class="ml-5 mr-5">
+  <section>
+    <div class="d-flex bd-highlight mb-3">
+      <div class="m-2 ml-auto">
+        <a href="/libros/new" class="btn btn-success"
+          ><i class="fas fa-user-plus"></i> Nuevo Libro</a
+        >
+      </div>
+    </div>
+  </section>
+  <table class="table table-sm text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Editorial</th>
+        <th scope="col">Area</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+
+    <% for( let i = 0; i < libros.length; i++ ) { %>
+    <tbody>
+      <tr>
+        <td><%= libros[i].titulo %></td>
+        <td><%= libros[i].editorial %></td>
+        <td><%= libros[i].area %></td>
+        <td>
+          <a
+            class="btn btn-primary"
+            href="/libros/edit/<%= libros[i].idlibro %>"
+          >
+            <i class="fas fa-pen"></i>
+            Editar
+          </a>
+          <a
+            class="btn btn-danger"
+            href="/libros/delete/<%= libros[i].idlibro %>"
+          >
+            <i class="fas fa-trash-alt"></i>
+            Eliminar
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <% } %>
+  </table>
+</div>
+
+<%- include('../partials/footer'); -%>

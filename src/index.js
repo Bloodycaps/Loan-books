@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(require("./routes/index.routes"));
 app.use(("/estudiantes"),require("./routes/student.routes"));
 app.use(("/autores"),require("./routes/author.routes"));
+app.use(("/libros"),require("./routes/book.routes"));
 
 //Public
 
